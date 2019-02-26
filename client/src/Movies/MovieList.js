@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+// eslint-disable-next-line
 import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
 
 export default class MovieList extends Component {
@@ -36,7 +38,7 @@ export default class MovieList extends Component {
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
-  <Link to={`/movies/${movie.id}`}>
+  <NavLink to={`/movies/${movie.id}`}>
     <div className="movie-card">
       <h2>{title}</h2>
       <div className="movie-director">
@@ -53,6 +55,6 @@ function MovieDetails({ movie }) {
         </div>
       ))}
     </div>
-  </Link>
+  </NavLink>
   );
 }
