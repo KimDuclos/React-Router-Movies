@@ -31,11 +31,11 @@ export default class App extends Component {
             exact path='/' 
             render={props => <MovieList {...props} movielist={props.movielist} />} />
           {/* <Route path='/movies/:id' component={Movie}/> */}
-          <Route 
-            path='.movies/:id' 
-            render={props => <Movie {...props} movie={props.movie} />} />
-        </div>
+          <Route path="/movies/:id" render={ (props) => {
+          return(<Movie {...props} addToSavedList={this.addToSavedList}/>)
+        }} />
       </div>
-    );
+    </div>
+    )
   }
 }
